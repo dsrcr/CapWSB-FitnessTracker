@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "feb193b4-db48-4b72-adcb-7e2cce640822",
+		"_postman_id": "0b6aa72c-0528-4432-8d7c-22723dc35016",
 		"name": "CapWSB-FitnessTracker",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39400478"
+		"_exporter_id": "39434327"
 	},
 	"item": [
 		{
@@ -161,6 +161,28 @@
 			"response": []
 		},
 		{
+			"name": "getUsersOlderThan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/v1/users/older/1991-08-10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"users",
+						"older",
+						"1991-08-10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "addUser",
 			"request": {
 				"method": "POST",
@@ -184,6 +206,36 @@
 					"path": [
 						"v1",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Example\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"users",
+						"1"
 					]
 				}
 			},

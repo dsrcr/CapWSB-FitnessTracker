@@ -7,5 +7,15 @@ package com.capgemini.wsb.fitnesstracker.user.api;
 public interface UserService {
 
     User createUser(User user);
+    /**
+     * Updates the information of an existing user.
+     * <p>This method merges the details of the provided user entity with the
+     * existing user record, applying only non-null fields.
+     *
+     * @param userId the ID of the user to update
+     * @param user the user entity containing updated information
+     * @return the updated {@link User} entity after applying changes
+     */
+    User updateUser(Long userId, User user);
 
 }
