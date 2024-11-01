@@ -3,8 +3,10 @@ package com.capgemini.wsb.fitnesstracker.user.internal;
 import com.capgemini.wsb.fitnesstracker.user.api.User;
 import com.capgemini.wsb.fitnesstracker.user.api.UserNotFoundException;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -91,7 +93,7 @@ class UserController {
      * Retrieves a user by their first and last name.
      *
      * @param firstName the first name of the user
-     * @param lastName the last name of the user
+     * @param lastName  the last name of the user
      * @return the user converted to UserDto
      * @throws UserNotFoundException if no user with the specified first and last name is found
      */
@@ -138,5 +140,29 @@ class UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUserById(@PathVariable Long id) {
         userService.deleteUserById(id);
+    }
+
+
+    /**
+     * Updates the information of an existing user.
+     *
+     * @param id   the ID of the user to update
+     * @param user the User DTO containing updated information
+     * @return the updated User DTO or null if the user was not found
+     */
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+        return userService.updateUser(id, user);
+    }
+
+    /**
+     * Retrieves all users older than the specified date.
+     *
+     * @param date the date to compare users' birthdays
+     * @return a list of users older than the specified date
+     */
+    @GetMapping("/older/{date}")
+    public List<User> findByAgeOlderThan(@PathVariable("date") LocalDate date) {
+        return userService.findUsersOlderThan(date);
     }
 }

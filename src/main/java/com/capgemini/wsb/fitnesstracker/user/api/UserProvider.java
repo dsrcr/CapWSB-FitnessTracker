@@ -6,6 +6,11 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Interface (API) for retrieving operations on {@Link User} entities through the API
+ * Implementations of this interface serve as a data provider layer for managing user information,
+ * facilitating operations for handling user data based on ID, email, or other attributes.
+ */
 public interface UserProvider {
 
     /**
@@ -37,7 +42,7 @@ public interface UserProvider {
      * Retrieves a user by their first and last name.
      *
      * @param firstName the first name of the user
-     * @param lastName the last name of the user
+     * @param lastName  the last name of the user
      * @return an Optional containing the User if found, or an empty Optional if not found
      */
     Optional<User> getUserByNameSurname(String firstName, String lastName);
@@ -56,4 +61,13 @@ public interface UserProvider {
      * @param id the ID of the user to delete
      */
     void deleteUserById(Long id);
+
+    /**
+     * Retrieves all users older than the specified date.
+     *
+     * @param date the date to compare against users' birthdates
+     * @return a list of users older than the specified date
+     */
+    List<User> findUsersOlderThan(LocalDate date);
+
 }
