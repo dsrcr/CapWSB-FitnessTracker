@@ -2,8 +2,6 @@ package com.capgemini.wsb.fitnesstracker.training.internal;
 
 import com.capgemini.wsb.fitnesstracker.training.api.Training;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -19,9 +17,6 @@ import java.util.List;
 @RequestMapping("/v1/trainings")
 @RequiredArgsConstructor
 public class TrainingController {
-
-    @Autowired
-    private final TrainingRepository trainingRepository;
 
     private final TrainingServiceImpl trainingService;
 
@@ -44,7 +39,7 @@ public class TrainingController {
      */
     @GetMapping("/{userId}")
     public List<Training> getTrainingsByUser(@PathVariable Long userId) {
-        return trainingRepository.findByUserId(userId);
+        return trainingService.getTrainingsByUserId(userId);
     }
 
     /**

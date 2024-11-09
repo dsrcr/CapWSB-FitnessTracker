@@ -3,10 +3,8 @@ package com.capgemini.wsb.fitnesstracker.training.internal;
 import com.capgemini.wsb.fitnesstracker.training.api.Training;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 interface TrainingRepository extends JpaRepository<Training, Long> {
 
@@ -16,14 +14,7 @@ interface TrainingRepository extends JpaRepository<Training, Long> {
      * @param userId the user ID to search for
      * @return a list of Trainings that belong to the user with the given ID
      */
-    default List<Training> findByUserId(Long userId) {
-        return findAll().stream()
-                .filter(training -> {
-                    assert training.getUser().getId() != null;
-                    return training.getUser().getId().equals(userId);
-                })
-                .toList();
-    }
+    List<Training> findByUserId(Long userId);
 
     /**
      * Retrieves all trainings that are finished after the specified date.
