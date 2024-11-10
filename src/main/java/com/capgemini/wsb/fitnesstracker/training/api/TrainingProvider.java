@@ -1,18 +1,46 @@
 package com.capgemini.wsb.fitnesstracker.training.api;
 
-import com.capgemini.wsb.fitnesstracker.user.api.User;
+import com.capgemini.wsb.fitnesstracker.training.internal.ActivityType;
 
-import java.util.Optional;
+import java.util.Date;
+import java.util.List;
 
+/**
+ * Interface for managing and retrieving {@link Training} objects from a training provider.
+ * This interface provides methods for retrieving training details based on the training ID and filtering
+ * trainings by user or other criteria.
+ */
 public interface TrainingProvider {
 
     /**
-     * Retrieves a training based on their ID.
-     * If the user with given ID is not found, then {@link Optional#empty()} will be returned.
+     * Retrieves all trainings available in the system.
      *
-     * @param trainingId id of the training to be searched
-     * @return An {@link Optional} containing the located Training, or {@link Optional#empty()} if not found
+     * @return A list of all {@link Training} objects.
      */
-    Optional<User> getTraining(Long trainingId);
+    List<Training> findAllTrainings();
+
+    /**
+     * Retrieves a list of trainings that have ended after the specified date.
+     *
+     * @param endDate The date after which the trainings must have ended.
+     * @return A list of {@link Training} objects that ended after the provided date.
+     */
+    List<Training> findTrainingsAfterDate(Date endDate);
+
+    /**
+     * Retrieves a list of all trainings for a specified user.
+     *
+     * @param userId the ID of the user whose trainings are to be retrieved
+     * @return a list of {@link Training} objects associated with the specified user
+     */
+    List<Training> getTrainingsByUserId(Long userId);
+
+    /**
+     * Retrieves all trainings associated with a specific activity type.
+     *
+     * @param activityType the activity type to search for (e.g., RUNNING, CYCLING)
+     * @return a list of {@link Training} objects associated with the specified activity type
+     */
+    List<Training> getTrainingsByActivityType(ActivityType activityType);
 
 }

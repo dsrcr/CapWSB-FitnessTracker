@@ -4,7 +4,7 @@ import com.capgemini.wsb.fitnesstracker.user.api.User;
 import org.springframework.stereotype.Component;
 
 @Component
-class UserMapper {
+public class UserMapper {
 
     /**
      * Converts a User entity to a UserDto.
@@ -12,7 +12,7 @@ class UserMapper {
      * @param user the User entity to convert
      * @return a UserDto containing user information
      */
-    UserDto toDto(User user) {
+    public UserDto toDto(User user) {
         return new UserDto(user.getId(),
                 user.getFirstName(),
                 user.getLastName(),
@@ -26,7 +26,7 @@ class UserMapper {
      * @param userDto the UserDto to convert
      * @return a User entity created from the UserDto data
      */
-    User toEntity(UserDto userDto) {
+    public User toEntity(UserDto userDto) {
         return new User(
                 userDto.firstName(),
                 userDto.lastName(),
