@@ -43,4 +43,19 @@ public interface TrainingProvider {
      */
     List<Training> getTrainingsByActivityType(ActivityType activityType);
 
+    /**
+     * Creates a new training entry.
+     *
+     * @param training the training to create
+     * @return the created training
+     */
+    Training createTraining(Training training);
+
+    /**
+     * Updates an existing training entry.
+     *
+     * @param training the training to update
+     * @return the updated training
+     */
+    Training updateTraining(Training training);
 }

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d1203256-b8b3-44b2-ab3c-eb5f8a20c97b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/100918b1-fbe5-409d-a601-d9c2b859fffd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/100918b1-fbe5-409d-a601-d9c2b859fffd/storage_v2/_src_/database/TESTDB.kGhKkw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/100918b1-fbe5-409d-a601-d9c2b859fffd/storage_v2/_src_/database/TESTDB.kGhKkw/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/api/Training.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/api/Training.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/api/TrainingProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/api/TrainingProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/api/TrainingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/internal/TrainingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/internal/TrainingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/internal/TrainingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/training/internal/TrainingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/user/internal/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/capgemini/wsb/fitnesstracker/user/internal/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CapWSB-FitnessTracker.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CapWSB-FitnessTracker.postman_collection.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ozLU98jrfYSnJDab3FYVK9vaxh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FitnessTracker.executor": "Run",
+    "JUnit.CapFitnessTrackerApplicationTests.executor": "Run",
+    "JUnit.TrainingApiIntegrationTest.executor": "Run",
+    "JUnit.TrainingApiIntegrationTest.shouldUpdateTraining_whenUpdatingTraining.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.TrainingApiIntegrationTest">
+    <configuration name="FitnessTracker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.capgemini.wsb.FitnessTracker" />
+      <module name="CapWSB-FitnessTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.capgemini.wsb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CapFitnessTrackerApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CapWSB-FitnessTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.capgemini.wsb.fitnesstracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.capgemini.wsb.fitnesstracker" />
+      <option name="MAIN_CLASS_NAME" value="com.capgemini.wsb.fitnesstracker.CapFitnessTrackerApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainingApiIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CapWSB-FitnessTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.capgemini.wsb.fitnesstracker.training.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.capgemini.wsb.fitnesstracker.training" />
+      <option name="MAIN_CLASS_NAME" value="com.capgemini.wsb.fitnesstracker.training.TrainingApiIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainingApiIntegrationTest.shouldUpdateTraining_whenUpdatingTraining" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CapWSB-FitnessTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.capgemini.wsb.fitnesstracker.training.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.capgemini.wsb.fitnesstracker.training" />
+      <option name="MAIN_CLASS_NAME" value="com.capgemini.wsb.fitnesstracker.training.TrainingApiIntegrationTest" />
+      <option name="METHOD_NAME" value="shouldUpdateTraining_whenUpdatingTraining" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TrainingApiIntegrationTest" />
+        <item itemvalue="JUnit.TrainingApiIntegrationTest.shouldUpdateTraining_whenUpdatingTraining" />
+        <item itemvalue="JUnit.CapFitnessTrackerApplicationTests" />
+        <item itemvalue="Application.FitnessTracker" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1203256-b8b3-44b2-ab3c-eb5f8a20c97b" name="Changes" comment="" />
+      <created>1731867471617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731867471617</updated>
+    </task>
+    <servers />
+  </component>
+</project>

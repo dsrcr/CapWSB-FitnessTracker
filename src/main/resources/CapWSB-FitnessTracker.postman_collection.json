@@ -240,6 +240,74 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "UpdateTraining",
+			"protocolProfileBehavior": {
+				"protocolVersion": "auto"
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"Emma.Johnson@domain.com\"\r\n    },\r\n    \"startTime\": \"2024-01-19T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-01-19T08:30:00.000+00:00\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 15.0,\r\n    \"averageSpeed\": 8.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/trainings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"trainings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"emma.johnson@example.com\"\r\n    },\r\n    \"startTime\": \"2024-01-19T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-01-19T08:30:00.000+00:00\",\r\n    \"activityType\": \"CYCLING\",\r\n    \"distance\": 10.5,\r\n    \"averageSpeed\": 8.2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
