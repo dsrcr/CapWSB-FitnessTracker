@@ -1,8 +1,8 @@
 package com.capgemini.wsb.fitnesstracker.training.internal;
 
 import com.capgemini.wsb.fitnesstracker.training.api.Training;
+import com.capgemini.wsb.fitnesstracker.training.api.TrainingDto;
 import com.capgemini.wsb.fitnesstracker.training.api.TrainingProvider;
-import com.capgemini.wsb.fitnesstracker.training.api.TrainingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 
-public class TrainingServiceImpl implements TrainingProvider, TrainingService {
+public class TrainingServiceImpl implements TrainingProvider {
 
     private final TrainingRepository trainingRepository;
 
@@ -83,14 +83,12 @@ public class TrainingServiceImpl implements TrainingProvider, TrainingService {
      * Updates an existing training record with new information.
      * Only the fields provided in the updated training object will be updated.
      *
-     * @param trainingId      the ID of the training record to be updated
-     * @param updatedTraining the {@link Training} object containing updated information
+     * @param training the {@link Training} object containing updated information
      * @return the updated {@link Training} object
      * @throws IllegalArgumentException if the training with the provided ID does not exist
      */
     @Override
-    public Training updateTraining(Long trainingId, Training updatedTraining) {
-        return null;
+    public Training updateTraining(Training training) {
+        return trainingRepository.save(training);
     }
-
 }

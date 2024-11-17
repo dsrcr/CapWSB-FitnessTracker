@@ -1,7 +1,11 @@
 package com.capgemini.wsb.fitnesstracker.training.internal;
 
+import com.capgemini.wsb.fitnesstracker.training.api.Training;
 import com.capgemini.wsb.fitnesstracker.training.api.TrainingDto;
 import com.capgemini.wsb.fitnesstracker.training.internal.ActivityType;
+import com.capgemini.wsb.fitnesstracker.user.api.User;
+import com.capgemini.wsb.fitnesstracker.user.internal.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +26,7 @@ public class TrainingController {
 
     private final TrainingServiceImpl trainingService;
     private final TrainingMapper trainingMapper;
+    private final UserRepository userRepository;
 
     /**
      * Retrieves all trainings available in the system and converts them to TrainingDto.
@@ -76,5 +81,46 @@ public class TrainingController {
         return trainingService.getTrainingsByActivityType(activityType).stream()
                 .map(trainingMapper::toDto)
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Handles the creation of a new training.
+     * <p>
+     * This method maps the incoming TrainingDto object to a Training entity
+     * and passes it to the training service to save it in the database.
+     *
+     * @param trainingDto the data transfer object containing the training details
+     * @return the created Training entity
+     */
+    @PostMapping
+    public Training createTraining(@RequestBody TrainingDto trainingDto) {
+        User user = userRepository.findById(trainingDto.user().id())
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        Training training = trainingMapper.toEntity(trainingDto);
+        training.setUser(user);
+
+        return trainingService.createTraining(training);
+    }
+
+    /**
+     * Updates an existing training with the given ID.
+     * <p>
+     * This method maps the incoming TrainingDto object to a Training entity,
+     * sets the ID of the entity to match the provided path variable, and
+     * passes it to the training service for updating in the database.
+     *
+     * @param id the ID of the training to be updated
+     * @param trainingDto the data transfer object containing the updated training details
+     * @return the updated Training entity
+     */
+    @PutMapping("/{id}")
+    public Training updateTraining(@PathVariable Long id, @RequestBody TrainingDto trainingDto) {
+        Long userId = trainingDto.user().id();
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User with ID " + userId + " not found"));
+        Training training = trainingMapper.toEntity(trainingDto);
+        training.setId(id);
+
+        return trainingService.updateTraining(training);
     }
 }
