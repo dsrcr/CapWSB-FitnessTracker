@@ -7,6 +7,7 @@ import com.capgemini.wsb.fitnesstracker.user.api.User;
 import com.capgemini.wsb.fitnesstracker.user.internal.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
@@ -93,7 +94,9 @@ public class TrainingController {
      * @return the created Training entity
      */
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Training createTraining(@RequestBody TrainingDto trainingDto) {
+        assert trainingDto.user().id() != null;
         User user = userRepository.findById(trainingDto.user().id())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
         Training training = trainingMapper.toEntity(trainingDto);
@@ -109,18 +112,19 @@ public class TrainingController {
      * sets the ID of the entity to match the provided path variable, and
      * passes it to the training service for updating in the database.
      *
-     * @param id the ID of the training to be updated
+     * @param id          the ID of the training to be updated
      * @param trainingDto the data transfer object containing the updated training details
      * @return the updated Training entity
      */
     @PutMapping("/{id}")
     public Training updateTraining(@PathVariable Long id, @RequestBody TrainingDto trainingDto) {
-        Long userId = trainingDto.user().id();
+        Long userId = trainingDto.user() != null ? trainingDto.user().id() : null;
+        assert userId != null : "User ID must be provided";
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new EntityNotFoundException("User with ID " + userId + " not found"));
         Training training = trainingMapper.toEntity(trainingDto);
         training.setId(id);
-
+        training.setUser(user);
         return trainingService.updateTraining(training);
     }
 }
