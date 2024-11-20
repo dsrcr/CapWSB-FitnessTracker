@@ -135,9 +135,15 @@ class TrainingApiIntegrationTest extends IntegrationTestBase {
 
         String requestBody = """
                 {
-                    "userId": "%s",
-                    "startTime": "2024-04-01T11:00:00",
-                    "endTime": "2024-04-01T11:00:00",
+                    "user": {
+                       "id": "%s",
+                       "firstName": "John",
+                       "lastName": "Doe",
+                       "email": "john.doe@example.com",
+                       "birthDate": "1990-01-01"
+                   },
+                    "startTime": "2024-04-01T11:00:00.000+00:00",
+                    "endTime": "2024-04-01T11:00:00.000+00:00",
                     "activityType": "RUNNING",
                     "distance": 10.52,
                     "averageSpeed": 8.2
@@ -162,9 +168,15 @@ class TrainingApiIntegrationTest extends IntegrationTestBase {
         Training training1 = persistTraining(generateTrainingWithActivityType(user1, ActivityType.RUNNING));
         String requestBody = """
                 {
-                "userId": "%s",
-                "startTime": "2022-04-01T10:00:00",
-                "endTime": "2022-04-01T11:00:00",
+                "user": {
+                       "id": "%s",
+                       "firstName": "John",
+                       "lastName": "Doe",
+                       "email": "john.doe@example.com",
+                       "birthDate": "1990-01-01"
+                   },
+                "startTime": "2024-04-01T11:00:00.000+00:00",
+                "endTime": "2024-04-01T11:00:00.000+00:00",
                 "activityType": "TENNIS",
                 "distance": 0.0,
                 "averageSpeed": 0.0
