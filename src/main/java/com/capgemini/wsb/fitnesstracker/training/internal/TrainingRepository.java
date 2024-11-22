@@ -2,11 +2,13 @@ package com.capgemini.wsb.fitnesstracker.training.internal;
 
 import com.capgemini.wsb.fitnesstracker.training.api.Training;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
 import java.util.List;
 
-interface TrainingRepository extends JpaRepository<Training, Long> {
+public interface TrainingRepository extends JpaRepository<Training, Long> {
 
     /**
      * Retrieves a list of trainings by the user ID.
@@ -31,4 +33,17 @@ interface TrainingRepository extends JpaRepository<Training, Long> {
      * @return a list of {@link Training} objects associated with the specified activity type
      */
     List<Training> findByActivityType(ActivityType activityType);
+
+    /**
+     * Retrieves the count of trainings for a specific user in a given month and year.
+     *
+     * @param userId       the ID of the user
+     * @param startOfMonth the start date of the month
+     * @param endOfMonth   the end date of the month
+     * @return the count of trainings
+     */
+    @Query("SELECT COUNT(t) FROM Training t WHERE t.user.id = :userId AND t.startTime BETWEEN :startOfMonth AND :endOfMonth")
+    long countByUserIdAndMonth(@Param("userId") Long userId,
+                               @Param("startOfMonth") Date startOfMonth,
+                               @Param("endOfMonth") Date endOfMonth);
 }

@@ -1,5 +1,5 @@
 spring:
-  profiles: 
+  profiles:
     active: loadInitialData
   datasource:
     url: "jdbc:h2:mem:testdb"
@@ -9,5 +9,19 @@ spring:
   h2:
     console:
       enabled: true
+
+
+mail:
+  from: '76077-99993@fitnestracker.com"'
+  host: 'sandbox.smtp.mailtrap.io'
+  port: 587
+  username: '176f2c41444209'
+  password: 'abac34815f7c6f'
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
 server:
   port: 9090
