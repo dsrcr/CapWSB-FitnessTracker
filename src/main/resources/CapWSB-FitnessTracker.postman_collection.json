@@ -316,7 +316,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"emma.johnson@example.com\"\r\n    },\r\n    \"startTime\": \"2024-01-19T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-01-19T08:30:00.000+00:00\",\r\n    \"activityType\": \"CYCLING\",\r\n    \"distance\": 10.5,\r\n    \"averageSpeed\": 8.2\r\n}",
+							"raw": "{\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"emma.johnson@example.com\"\r\n    },\r\n    \"startTime\": \"2024-11-22T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-11-22T08:30:00.000+00:00\",\r\n    \"activityType\": \"CYCLING\",\r\n    \"distance\": 10.5,\r\n    \"averageSpeed\": 8.2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -374,6 +374,128 @@
 								"v1",
 								"trainings",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "sendMonthlyReport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/reports/send-monthly-report?month=11&year=2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"reports",
+								"send-monthly-report"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "11"
+								},
+								{
+									"key": "year",
+									"value": "2024"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "addStatistics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/statistics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStatisticsByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/statistics/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"statistics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStatistics",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/statistics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStatisticsByCalories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/statistics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"statistics"
 							]
 						}
 					},
