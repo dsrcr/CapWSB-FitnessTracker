@@ -167,7 +167,9 @@ fabric.properties
 # Ignore everything but code style settings and run configurations
 # that are supposed to be shared within teams.
 
-.idea/*
+.idea/
+./idea/misc.xml
+./idea/workspace.xml
 
 !.idea/codeStyles
 !.idea/runConfigurations
