@@ -10,6 +10,35 @@
 			"name": "User",
 			"item": [
 				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Karol\",\r\n    \"lastName\": \"Pichurski\",\r\n    \"birthdate\": \"1999-05-30\",\r\n    \"email\": \"Karol.Pichurski@domain.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "getAllUsers",
 					"request": {
 						"method": "GET",
@@ -66,27 +95,6 @@
 								"v1",
 								"users",
 								"4"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getIdByEmail",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9090/v1/users/Noah.Miller@domain.com",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9090",
-							"path": [
-								"v1",
-								"users",
-								"Noah.Miller@domain.com"
 							]
 						}
 					},
@@ -186,35 +194,6 @@
 					"response": []
 				},
 				{
-					"name": "addUser",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Karol\",\r\n    \"lastName\": \"Pichurski\",\r\n    \"birthdate\": \"1999-05-30\",\r\n    \"email\": \"Karol.Pichurski@domain.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9090/v1/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9090",
-							"path": [
-								"v1",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "updateUser",
 					"request": {
 						"method": "PUT",
@@ -271,52 +250,13 @@
 			"name": "Training",
 			"item": [
 				{
-					"name": "updateTraining",
-					"protocolProfileBehavior": {
-						"protocolVersion": "auto"
-					},
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"Emma.Johnson@domain.com\"\r\n    },\r\n    \"startTime\": \"2024-01-19T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-01-19T08:30:00.000+00:00\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 15.0,\r\n    \"averageSpeed\": 8.2\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:9090/v1/trainings/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9090",
-							"path": [
-								"v1",
-								"trainings",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "createTraining",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"emma.johnson@example.com\"\r\n    },\r\n    \"startTime\": \"2024-11-22T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-11-22T08:30:00.000+00:00\",\r\n    \"activityType\": \"CYCLING\",\r\n    \"distance\": 10.5,\r\n    \"averageSpeed\": 8.2\r\n}",
+							"raw": "{\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"emma.johnson@example.com\"\r\n    },\r\n    \"startTime\": \"2024-11-22T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-11-22T08:30:00.000+00:00\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 10.5,\r\n    \"averageSpeed\": 8.2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,6 +303,45 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/trainings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"trainings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTraining",
+					"protocolProfileBehavior": {
+						"protocolVersion": "auto"
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"user\": {\r\n        \"id\": 1,\r\n        \"firstName\": \"Emma\",\r\n        \"lastName\": \"Johnson\",\r\n        \"birthdate\": \"1996-11-17\",\r\n        \"email\": \"Emma.Johnson@domain.com\"\r\n    },\r\n    \"startTime\": \"2024-01-19T07:00:00.000+00:00\",\r\n    \"endTime\": \"2024-01-19T08:30:00.000+00:00\",\r\n    \"activityType\": \"RUNNING\",\r\n    \"distance\": 15.0,\r\n    \"averageSpeed\": 8.2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:9090/v1/trainings/1",
 							"protocol": "http",
@@ -425,6 +404,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"user\": {\n        \"id\": 1,\n        \"firstName\": \"Emma\",\n        \"lastName\": \"Johnson\",\n        \"birthdate\": \"1996-11-22\",\n        \"email\": \"Emma.Johnson@domain.com\"\n    },\n    \"totalTrainings\": 15,\n    \"totalDistance\": 120.5,\n    \"totalCaloriesBurned\": 2300\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:9090/v1/statistics",
 							"protocol": "http",
@@ -435,6 +423,13 @@
 							"path": [
 								"v1",
 								"statistics"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -444,27 +439,6 @@
 					"name": "getStatisticsByUser",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9090/v1/statistics/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9090",
-							"path": [
-								"v1",
-								"statistics",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteStatistics",
-					"request": {
-						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:9090/v1/statistics",
@@ -487,7 +461,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/v1/statistics",
+							"raw": "http://localhost:9090/v1/statistics/calories/1000",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -495,7 +469,53 @@
 							"port": "9090",
 							"path": [
 								"v1",
-								"statistics"
+								"statistics",
+								"calories",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatistics",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/statistics/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"statistics",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStatistics",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/v1/statistics/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"v1",
+								"statistics",
+								"user",
+								"1"
 							]
 						}
 					},
